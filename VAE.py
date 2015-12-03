@@ -123,7 +123,6 @@ for i in range(101):
     for start, end in zip(range(0, len(trX), 128), range(128, len(trX), 128)):
         c = train(trX[start:end], floatX(np.random.randn(128, n_code)))
     
-    # if i % 10 == 0:
     samples = teX[:10, :]        
     r, cost = reconstruct(samples, floatX(np.random.randn(10, n_code)))
     print(cost)
@@ -135,15 +134,8 @@ for i in range(101):
     f = fantasize(samples)
     f1 = f[:10, :]
     f2 = f[10:, :]
-    #plotter(f1, f2, 28, i+9999)
     shp = (f1.shape[0], 1, 28, 28)
     f1 = f1.reshape(shp)
     f2 = f2.reshape(shp)
     Plots.plot_predictions_grid(f1, f2, i, shp, 'generated')
     
-    
-    #plotter(samples, f, 28, 999)    
-#         print(cost)
-#         
-# pickle.dump( Ws, open( "Ws.p", "wb" ) )
-# pickle.dump( bs, open( "bs.p", "wb" ) )
