@@ -73,8 +73,6 @@ def generate(Z, w2, b2, w3, b3):
     return out
 
     
-# layers should be of the form
-# (input size, n_hidden1, n_hidden_2, ..., input_size)
 def get_params(code_size):
     n_hidden1 = 600
     n_code = code_size
